@@ -1,0 +1,53 @@
+  <head>
+    <title>New Page</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/frameworks/bootstrap/3.0.0/themes/white-plum/bootstrap.min.css">
+  </head>
+  
+  <body>
+    {{> race}}
+  </body>
+  
+<template name="race">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">MathRace
+              {{#if currentUser}}
+	        {{loginButtons  align="right"}}
+	      {{/if}}
+            </div>
+            {{#if currentUser}}
+            <ul class="list-group">
+              {{#each players}}
+              <li class="list-group-item">
+                <img src="//graph.facebook.com/{{username}}/picture" width="48"
+                 class="col-sm-offset-{{position}}"/>
+              </li>
+              {{/each}}
+            </ul>
+            {{else}}
+              <h1>Join the revolution</h1>
+              <h2>Get smart or get last</h2>
+	      {{loginButtons  align="right"}}
+	    {{/if}}
+            <div class="panel-footer">
+              <a id="btn-join" class="btn btn-primary">Join race</a>
+              {{#if juan}}
+              <a id="btn-reset" class="btn btn-primary">Reset</a>
+              {{/if}}
+              <form>
+                <div class="form-group">
+                  <label class="control-label">How much is 4x4?</label>
+                  <div class="controls">
+                    <input id="answer" type="text" class="form-control">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

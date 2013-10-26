@@ -1,0 +1,6 @@
+@Players = new Meteor.Collection "players"
+
+Template.race.events
+  'click': (event)->
+    console.log event
+  
